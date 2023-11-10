@@ -20,7 +20,7 @@ const Homepage = () => {
 		<>
 			<div className="flex">
 				<div className="h-max w-1/2 flex flex-col ml-5 p-5 my-auto">
-					<div className="flex items-center justify-center my-auto">
+					<div className="flex items-center">
 						<Image
 							src={me}
 							alt="Josh standing in front of a pub"
