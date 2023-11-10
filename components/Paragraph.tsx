@@ -6,7 +6,7 @@ interface paragraphProps {
 
 const Paragraph = ({ children }: paragraphProps) => {
 	return (
-		<p className="bg-gradient-to-r from-gray-600 to-gray-700 mb-3 text-transparent bg-clip-text break-normal ">
+		<p className="bg-gradient-to-r from-gray-600 to-gray-700 mb-3 text-transparent bg-clip-text break-normal text-xl">
 			{children}
 		</p>
 	);

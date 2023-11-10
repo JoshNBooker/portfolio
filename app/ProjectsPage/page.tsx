@@ -34,8 +34,8 @@ export default function ProjectsPage() {
 								src={fightScreen}
 								alt="The Gitbash fightscreen"
 								className="mb-5 object-contain rounded"
-								width={300}
-								height={350}
+								width={400}
+								height={450}
 							/>
 							<ProjectCardParagraph>
 								Gitbash is a Browser game, based around turn
@@ -57,7 +57,7 @@ export default function ProjectsPage() {
 								src={spookCity}
 								alt="The spookcity user interface"
 								className="mb-5 object-contain rounded"
-								height={300}
+								height={350}
 							/>
 							<ProjectCardParagraph>
 								Spook City is a mobile app designed to give a
@@ -78,8 +78,8 @@ export default function ProjectsPage() {
 								src={sakuraSpa}
 								alt="The Sakura Spa welcome page"
 								className="mb-5 object-contain rounded"
-								width={300}
-								height={350}
+								width={400}
+								height={450}
 							/>
 							<ProjectCardParagraph>
 								This was the first project I did CodeClan, so
