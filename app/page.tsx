@@ -51,12 +51,8 @@ const Homepage = () => {
 						<Modal>
 							{selectedComponent == 'aboutMe' ? (
 								<AboutMe />
-							) : selectedComponent == 'chuun' ? (
-								<Chuun />
 							) : selectedComponent == 'projects' ? (
 								<Projects />
-							) : selectedComponent == 'music' ? (
-								<Music />
 							) : (
 								selectedComponent == 'writing' && <Writing />
 							)}
