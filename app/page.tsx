@@ -25,13 +25,13 @@ const Homepage = () => {
 							src={me}
 							alt="Josh standing in front of a pub"
 							className="object-contain rounded"
-							width={300}
-							height={300}
+							width={400}
+							height={400}
 							loading="eager"
 						/>
 						<article className="ml-5 max-w-sm">
 							<Title>Hello!</Title>
-							<p className="w-full bg-gradient-to-r from-gray-500 to-gray-700 text-transparent bg-clip-text break-normal mb-10">
+							<p className="w-full bg-gradient-to-r from-gray-500 to-gray-700 text-transparent bg-clip-text break-normal mb-10 text-xl">
 								I am Josh, a software developer in the early
 								days of my career, eager to learn, collaborate,
 								and build things that make people say
@@ -60,9 +60,7 @@ const Homepage = () => {
 					</div>
 				) : (
 					<div className="h-screen w-2/3 flex items-center justify-center">
-						<Title>
-							Hover over one of the sections on the left to browse
-						</Title>
+						<Title>Hover on a topic</Title>
 					</div>
 				)}
 			</div>
