@@ -10,6 +10,7 @@ import Image from 'next/image.js';
 import Modal from '@/components/Modal';
 import Title from '@/components/Title';
 import PulsatingText from '@/components/Pulse';
+import MenuTitle from '@/components/MenuTitle';
 const me = require('../public/me.png');
 
 const Homepage = () => {
@@ -90,7 +91,7 @@ const Homepage = () => {
 				) : (
 					<div className="h-screen w-2/3 flex items-center justify-center">
 						<PulsatingText>
-							<Title>Browse the topics</Title>
+							<MenuTitle>What do you want to see?</MenuTitle>
 						</PulsatingText>
 					</div>
 				)}
