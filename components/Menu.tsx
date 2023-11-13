@@ -2,6 +2,7 @@ import React from 'react';
 import Button from './Button';
 import Paragraph from './Paragraph';
 import Title from './Title';
+import MenuTitle from './MenuTitle';
 
 interface menuProps {
 	setSelectedComponent: Function;
@@ -22,7 +23,9 @@ const Menu = ({ setSelectedComponent, setModalVisible }: menuProps) => {
 							setModalVisible(true);
 						}}
 					>
-						<Title>More About Me</Title>
+						<MenuTitle>
+							<span className="ml-8">About Me</span>
+						</MenuTitle>
 					</Button>
 				</li>
 				<li>
@@ -33,7 +36,7 @@ const Menu = ({ setSelectedComponent, setModalVisible }: menuProps) => {
 								setSelectedComponent('projects')
 							}
 						>
-							<Title>Projects</Title>
+							<MenuTitle>Projects</MenuTitle>
 						</Button>
 					</a>
 				</li>
@@ -42,7 +45,9 @@ const Menu = ({ setSelectedComponent, setModalVisible }: menuProps) => {
 						onClick={() => setSelectedComponent('writing')}
 						onMouseEnter={() => setSelectedComponent('writing')}
 					>
-						<Title>Writing</Title>
+						<MenuTitle>
+							<span className="ml-12">Writing</span>
+						</MenuTitle>
 					</Button>
 				</li>
 			</ul>
