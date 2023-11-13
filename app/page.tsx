@@ -9,13 +9,30 @@ import Writing from '../components/Writing';
 import Image from 'next/image.js';
 import Modal from '@/components/Modal';
 import Title from '@/components/Title';
-const me = require('../public/me.jpg');
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+const me = require('../public/me.png');
 
 const Homepage = () => {
-	const [selectedComponent, setSelectedComponent] = useState('');
+	const [selectedComponent, setSelectedComponent] = useState('default');
 	const [modalVisible, setModalVisible] = useState(false);
 	console.log('selected component: ', selectedComponent);
 	console.log('modal visible:', modalVisible);
+
+	const menuImages: { [key: string]: any } = {
+		aboutMe: require('../public/aboutMe.jpg'),
+		projects: require('../public/projects.png'),
+		writing: require('../public/writing.png'),
+	};
+
+	function getImage(selectedComponent: string) {
+		for (const key in menuImages) {
+			if (key === selectedComponent) {
+				return menuImages[key];
+			}
+		}
+		return require('../public/default.png');
+	}
+
 	return (
 		<>
 			<div className="flex">
@@ -23,7 +40,7 @@ const Homepage = () => {
 					<div className="flex items-center">
 						<Image
 							src={me}
-							alt="Josh standing in front of a pub"
+							alt="Josh in manchester"
 							className="object-contain rounded"
 							width={400}
 							height={400}
@@ -41,10 +58,22 @@ const Homepage = () => {
 							</p>
 						</article>
 					</div>
-					<Menu
-						setSelectedComponent={setSelectedComponent}
-						setModalVisible={setModalVisible}
-					/>
+					<div className="flex">
+						<Menu
+							setSelectedComponent={setSelectedComponent}
+							setModalVisible={setModalVisible}
+						/>
+						{selectedComponent && (
+							<Image
+								src={getImage(selectedComponent)}
+								alt={selectedComponent}
+								className="rounded-full drop-shadow-2xl"
+								width={350}
+								height={350}
+								loading="eager"
+							/>
+						)}
+					</div>
 				</div>
 				{modalVisible ? (
 					<div className="h-screen w-2/3 flex items-center justify-center">
