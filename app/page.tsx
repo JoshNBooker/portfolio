@@ -9,7 +9,7 @@ import Writing from '../components/Writing';
 import Image from 'next/image.js';
 import Modal from '@/components/Modal';
 import Title from '@/components/Title';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import PulsatingText from '@/components/Pulse';
 const me = require('../public/me.png');
 
 const Homepage = () => {
@@ -89,7 +89,9 @@ const Homepage = () => {
 					</div>
 				) : (
 					<div className="h-screen w-2/3 flex items-center justify-center">
-						<Title>Hover on a topic</Title>
+						<PulsatingText>
+							<Title>Browse the topics</Title>
+						</PulsatingText>
 					</div>
 				)}
 			</div>

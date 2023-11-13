@@ -37,9 +37,18 @@ const config: Config = {
 					'0 45px 65px rgba(0, 0, 0, 0.15)',
 				],
 			},
+			keyframes: {
+				lift: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+			},
+			animation: {
+				lift: 'lift 1s ease-in-out infinite',
+			},
 		},
-		plugins: [],
 	},
+	plugins: [],
 };
 
 export default config;
