@@ -2,6 +2,7 @@ import Button from './Button';
 import LineBreak from './LineBreak';
 import ModalContainer from './ModalContainer';
 import Paragraph from './Paragraph';
+import Pulse from './Pulse';
 import Title from './Title';
 
 const Projects = () => {
@@ -23,7 +24,9 @@ const Projects = () => {
 						console.log('mouse enter');
 					}}
 				>
-					<Title>Click to see more...</Title>
+					<Pulse>
+						<Title>Click to see more...</Title>
+					</Pulse>
 				</Button>
 			</a>
 		</ModalContainer>
