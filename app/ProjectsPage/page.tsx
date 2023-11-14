@@ -82,7 +82,7 @@ export default function ProjectsPage() {
 								height={450}
 							/>
 							<ProjectCardParagraph>
-								This was the first project I did CodeClan, so
+								This was the first project I did at CodeClan, so
 								it&apos;s pretty basic. I&apos;m still pround of
 								it however, and I think it has some pretty cool
 								styling. It&apos;s all done in Python and Jinja,
