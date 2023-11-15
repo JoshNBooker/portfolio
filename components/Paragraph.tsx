@@ -3,11 +3,17 @@ import { ReactNode } from 'react';
 interface paragraphProps {
 	children: ReactNode;
 }
-
 const Paragraph = ({ children }: paragraphProps) => {
 	return (
-		<p className="bg-gradient-to-r from-gray-600 to-gray-700 mb-3 text-transparent bg-clip-text break-normal text-xl">
+		<p className="scrollable-paragraph">
 			{children}
+			<style jsx>{`
+				.scrollable-paragraph {
+					max-height: 300px;
+					overflow-y: auto;
+					margin: 0;
+				}
+			`}</style>
 		</p>
 	);
 };

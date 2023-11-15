@@ -91,7 +91,7 @@ const Homepage = () => {
 				) : (
 					<div className="h-screen w-2/3 flex items-center justify-center">
 						<PulsatingText>
-							<MenuTitle>What do you want to see?</MenuTitle>
+							<MenuTitle>Check me out!</MenuTitle>
 						</PulsatingText>
 					</div>
 				)}

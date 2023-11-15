@@ -6,7 +6,7 @@ interface modalProps {
 
 const Modal = ({ children }: modalProps) => {
 	return (
-		<div className="bg-lavender bg-opacity-25 p-5 flex justify-centre items-center h-max w-9/12 rounded-xl shadow-2xl">
+		<div className="bg-lavender bg-opacity-25 p-5 flex justify-centre items-center h-max w-max rounded-xl shadow-2xl max-w-2xl">
 			{children}
 		</div>
 	);
