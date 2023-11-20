@@ -11,7 +11,9 @@ import Modal from '@/components/Modal';
 import Title from '@/components/Title';
 import PulsatingText from '@/components/Pulse';
 import MenuTitle from '@/components/MenuTitle';
+import Button from '@/components/Button';
 const me = require('../public/me.png');
+import CVDownloadButton from '@/components/CVDownload/CVDownloadButton';
 
 const Homepage = () => {
 	const [selectedComponent, setSelectedComponent] = useState('default');
@@ -77,7 +79,7 @@ const Homepage = () => {
 					</div>
 				</div>
 				{modalVisible ? (
-					<div className="h-screen w-2/3 flex items-center justify-center">
+					<div className="h-screen w-2/3 flex items-center justify-center flex flex-col">
 						<Modal>
 							{selectedComponent == 'aboutMe' ? (
 								<AboutMe />
@@ -87,6 +89,7 @@ const Homepage = () => {
 								selectedComponent == 'writing' && <Writing />
 							)}
 						</Modal>
+						{selectedComponent == 'aboutMe' && <CVDownloadButton />}
 					</div>
 				) : (
 					<div className="h-screen w-2/3 flex items-center justify-center">
