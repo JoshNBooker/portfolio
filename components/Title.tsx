@@ -6,7 +6,7 @@ interface titleProps {
 
 const Title = ({ children }: titleProps) => {
 	return (
-		<h1 className="text-6xl font-semibold text-gray-800 mb-2">
+		<h1 className="text-4xl font-semibold text-gray-800 mb-2">
 			{children}
 		</h1>
 	);

@@ -45,8 +45,8 @@ const Homepage = () => {
 							src={me}
 							alt="Josh in manchester"
 							className="object-contain rounded"
-							width={400}
-							height={400}
+							width={350}
+							height={350}
 							loading="eager"
 						/>
 						<article className="ml-5 max-w-sm">
@@ -56,8 +56,7 @@ const Homepage = () => {
 								days of my career, eager to learn, collaborate,
 								and build things that make people say
 								&quot;huh... that&apos;s actually pretty
-								cool&quot;. Hover over the titles below if you
-								want to find out a bit more!
+								cool&quot;.
 							</p>
 						</article>
 					</div>
