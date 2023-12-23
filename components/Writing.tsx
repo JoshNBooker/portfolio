@@ -4,7 +4,9 @@ import Title from './Title';
 const Writing = () => {
 	return (
 		<ModalContainer>
-			<Title>Coming soon</Title>
+			<a href="/writing">
+				<Title>Go on, give it a click!</Title>
+			</a>
 		</ModalContainer>
 	);
 };

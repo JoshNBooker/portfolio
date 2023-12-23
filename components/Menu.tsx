@@ -41,14 +41,14 @@ const Menu = ({ setSelectedComponent, setModalVisible }: menuProps) => {
 					</a>
 				</li>
 				<li>
-					<Button
-						onClick={() => setSelectedComponent('writing')}
-						onMouseEnter={() => setSelectedComponent('writing')}
-					>
-						<MenuTitle>
-							<span className="ml-12">Writing</span>
-						</MenuTitle>
-					</Button>
+					<a href="/writing">
+						<Button
+							onClick={() => setSelectedComponent('writing')}
+							onMouseEnter={() => setSelectedComponent('writing')}
+						>
+							<MenuTitle>Writing</MenuTitle>
+						</Button>
+					</a>
 				</li>
 			</ul>
 		</div>
