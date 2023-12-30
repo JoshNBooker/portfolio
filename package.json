@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "datetime": "^0.0.3",
     "next": "14.0.0",
     "next-images": "^1.8.5",
     "react": "^18",
