@@ -12,13 +12,10 @@ import Modal from '@/components/Modal';
 
 interface BlogPost {
 	id: number;
-	title: {
-		rendered: string;
-	};
-	date: string;
-	content: {
-		rendered: string;
-	};
+	title: string;
+	created_at: string;
+	description: string;
+	url: string;
 }
 
 const WritingPage = () => {
@@ -30,20 +27,19 @@ const WritingPage = () => {
 		}
 		return reversedString;
 	};
-	const formatDate = (blogPosts: BlogPost[]) => {
-		for (let blog of blogPosts) {
-			let date = blog.date.substring(0, 10);
-			let dateArray = date.split('-');
-			let formattedDate = '';
-			for (let i = 2; i >= 0; i--) {
-				formattedDate += `${dateArray[i]} `;
-			}
-			return formattedDate;
+
+	const formatDate = (created_at: string) => {
+		let date = created_at.substring(0, 10);
+		let dateArray = date.split('-');
+		let formattedDate = '';
+		for (let i = 2; i >= 0; i--) {
+			formattedDate += `${dateArray[i]} `;
 		}
+		return formattedDate;
 	};
 
 	const getBlogPosts = () => {
-		fetch('https://joshdev9.wordpress.com/wp-json/wp/v2/posts')
+		fetch(`https://dev.to/api/articles?username=boojnooker`)
 			.then((response) => {
 				if (!response.ok) {
 					throw new Error(`HTTP error! Status: ${response.status}`);
@@ -66,56 +62,44 @@ const WritingPage = () => {
 				console.error('Error fetching blog posts:', error);
 			});
 	};
+	console.log(blogPosts);
 
 	useEffect(() => {
 		getBlogPosts();
 	}, []);
-	// if (blogPosts) {
-	// 	console.log(blogPosts[0].date);
-	// }
 
 	return (
-		<div className="flex flex-col items-center my-10 mx-20 max-w-screen">
-			<MenuTitle>My Little Dev Blog</MenuTitle>
-			<Paragraph>
-				These are all posts pulled in from a wordpress site that I made
-				using PHP and jQuery, pulled in through a REST API. There's not
-				really much utility in doing this, but look possible employers,
-				I can use RESTful APIs!
-			</Paragraph>
-			<LineBreak />
+		<div>
+			<Container>
+				<Title>Welcome to my Dev Blog!</Title>
+				<Paragraph>
+					These posts are pulled in from my profile on dev.to through
+					their API. Look potential employers, I know how to use
+					RESTful APIs!
+				</Paragraph>
+			</Container>
 			{blogPosts ? (
-				blogPosts.map((blogpost) => (
-					<div key={blogpost.id}>
-						<Title>{blogpost.title.rendered}</Title>
+				blogPosts.map((post) => (
+					<div
+						className="ml-10 flex flex-col space-y-5 mt-5"
+						key={post.id}
+					>
 						<Paragraph>
-							<span className="font-bold mb-8">
-								{formatDate(blogPosts)}
-							</span>
+							<span className="text-xl">{post.title}</span>
 						</Paragraph>
-						<Paragraph>
-							<div
-								dangerouslySetInnerHTML={{
-									__html: blogpost.content.rendered,
-								}}
-							/>
-						</Paragraph>
-						<LineBreak />
+						<Paragraph>{formatDate(post.created_at)}</Paragraph>
+						<Paragraph>{post.description}</Paragraph>
+						<a href={post.url}>
+							<div className="bg-lavender bg-opacity-25 p-5 flex justify-centre items-center h-max w-max rounded-xl shadow-2xl max-w-2xl hover:shadow-none">
+								Read More on dev.to
+							</div>
+						</a>
 					</div>
 				))
 			) : (
-				<Container>
-					<Title>
-						<Pulse>One sec, just fetching some stuff!</Pulse>
-					</Title>
-					<Paragraph>
-						If nothing shows up, you can click{' '}
-						<Modal>
-							<a href="">here</a>
-						</Modal>{' '}
-						to be taken to my wordpress blog!
-					</Paragraph>
-				</Container>
+				<Title>
+					<Pulse>Won't be a sec!</Pulse>
+				</Title>
 			)}
 		</div>
 	);
