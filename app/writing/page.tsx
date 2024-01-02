@@ -43,7 +43,7 @@ const WritingPage = () => {
 	};
 
 	const getBlogPosts = () => {
-		fetch('http://localhost:8888/wordpress/wp-json/wp/v2/posts')
+		fetch('https://joshdev9.wordpress.com/wp-json/wp/v2/posts')
 			.then((response) => {
 				if (!response.ok) {
 					throw new Error(`HTTP error! Status: ${response.status}`);
