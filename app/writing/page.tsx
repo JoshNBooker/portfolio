@@ -19,7 +19,7 @@ interface BlogPost {
 }
 
 const WritingPage = () => {
-	const [blogPosts, setBlogPosts] = useState<null | BlogPost[]>([]);
+	const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
 	const reverseString = (string: string) => {
 		let reversedString = '';
 		for (let i = string.length - 1; i >= 0; i--) {
@@ -71,22 +71,20 @@ const WritingPage = () => {
 	return (
 		<div>
 			<Container>
-				<Title>Welcome to my Dev Blog!</Title>
+				<MenuTitle>Welcome to my Dev Blog!</MenuTitle>
 				<Paragraph>
 					These posts are pulled in from my profile on dev.to through
 					their API. Look potential employers, I know how to use
 					RESTful APIs!
 				</Paragraph>
 			</Container>
-			{blogPosts ? (
+			{blogPosts.length > 0 &&
 				blogPosts.map((post) => (
 					<div
 						className="ml-10 flex flex-col space-y-5 mt-5"
 						key={post.id}
 					>
-						<Paragraph>
-							<span className="text-xl">{post.title}</span>
-						</Paragraph>
+						<Title>{post.title}</Title>
 						<Paragraph>{formatDate(post.created_at)}</Paragraph>
 						<Paragraph>{post.description}</Paragraph>
 						<a href={post.url}>
@@ -94,12 +92,15 @@ const WritingPage = () => {
 								Read More on dev.to
 							</div>
 						</a>
+						<LineBreak />
 					</div>
-				))
-			) : (
-				<Title>
-					<Pulse>Won't be a sec!</Pulse>
-				</Title>
+				))}
+			{blogPosts.length === 0 && (
+				<Container>
+					<Pulse>
+						<Paragraph>Won't be a sec!</Paragraph>
+					</Pulse>
+				</Container>
 			)}
 		</div>
 	);

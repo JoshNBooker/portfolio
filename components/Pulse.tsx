@@ -25,7 +25,7 @@ const PulsatingText: React.FC<PulsatingTextProps> = ({
 						) : (
 							<span
 								key={index}
-								className="mb-5 inline-block animate-lift text-6xl font-semibold text-gray-800"
+								className="mb-5 inline-block animate-lift text-5xl font-semibold text-gray-800"
 								style={{ animationDelay: `${index * 0.1}s` }}
 							>
 								{letter}
